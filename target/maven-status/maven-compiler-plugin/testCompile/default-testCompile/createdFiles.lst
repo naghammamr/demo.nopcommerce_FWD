@@ -1,0 +1,6 @@
+org\example\pages\P02_Register.class
+org\example\stepDefinitions\D01_registerStepDef.class
+org\example\pages\P03_Login.class
+org\example\runners\TestRunner.class
+org\example\stepDefinitions\Hooks.class
+org\example\pages\P01_Home.class

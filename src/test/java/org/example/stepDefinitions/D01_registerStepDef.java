@@ -4,13 +4,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.pages.P00_Home;
+import org.example.pages.P03_homePage;
 import org.example.pages.P01_Register;
 import org.testng.asserts.SoftAssert;
 
 public class D01_registerStepDef {
 
-    P00_Home home = new P00_Home();
+    P03_homePage home = new P03_homePage();
     P01_Register registerObj = new P01_Register();
 
     @Given("user go to register page")
@@ -64,6 +64,4 @@ public class D01_registerStepDef {
 
         soft.assertAll();
     }
-
 }
-

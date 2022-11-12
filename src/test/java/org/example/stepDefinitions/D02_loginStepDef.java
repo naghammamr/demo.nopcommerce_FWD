@@ -52,7 +52,7 @@ public class D02_loginStepDef {
         String actualErrorMsgColor = Color.fromString(errorMsgColor).asHex();
         System.out.println("Expected is: " + expectedErrorMsgColor + " ,And Actual is: " + actualErrorMsgColor);
 
-        sAssert.assertEquals(actualErrorMsgColor, expectedErrorMsgColor, "Invalid URL!");
+        sAssert.assertEquals(actualErrorMsgColor, expectedErrorMsgColor, "Invalid Message color!");
 
 
     }

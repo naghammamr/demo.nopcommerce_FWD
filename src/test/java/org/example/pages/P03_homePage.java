@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.security.PublicKey;
 import java.util.List;
 import java.util.Random;
 
@@ -28,7 +29,7 @@ public class P03_homePage {
     //end product detail page/
 
     By mainCategoryLocator = By.cssSelector("ul[class='top-menu notmobile']>li>a");
-    By subCategoryLocator = By.xpath("//ul[@class='sublist first-level']//li//a");
+    //By subCategoryLocator = By.xpath("//ul[@class='sublist first-level']//li//a");
 
     Actions hover = new Actions(Hooks.driver);
 
@@ -85,8 +86,7 @@ public class P03_homePage {
         return product_name;
     }
 
-    public int getProductsCount()
-    {
+    public int getProductsCount() {
         return Hooks.driver.findElements(productNameLocator).size();
     }
 
@@ -96,36 +96,79 @@ public class P03_homePage {
 
     public String getProductSKU() {
 
-       return Hooks.driver.findElement(productSKULocator).getText();
+        return Hooks.driver.findElement(productSKULocator).getText();
     }
 
     ///////Hovers/////////
+
     public void hoverRandomCategory() {
 
         List<WebElement> categories = Hooks.driver.findElements(mainCategoryLocator);
 
         int randomCategory = new Random().nextInt(3); // Select Random number from 0 to 2
         hover.moveToElement(categories.get(randomCategory)).perform();
+        System.out.println(randomCategory);
     }
 
-    public void clickRandomSubCategory()
-    {
-        List<WebElement> subCategories = Hooks.driver.findElements(subCategoryLocator);
+    By subCategoryLocator = By.xpath("//ul//li//ul[@class='sublist first-level']//li//a");
+
+    public void clickRandomSubCategory() {
         int randomSubCategory = new Random().nextInt(3); // Select Random number from 0 to 2
-    }
-    public List<WebElement> getCategories() {
 
+        List<WebElement> subCategories = Hooks.driver.findElements(By.xpath("//ul//li[" + randomSubCategory + 1 + "]//ul[@class='sublist first-level']//li[" + randomSubCategory + 1 + "]//a"));
+        System.out.println(subCategories.get(randomSubCategory).getText());
+        subCategories.get(randomSubCategory).click();
+    }
+
+    public List<WebElement> getCategories() {
         return Hooks.driver.findElements(mainCategoryLocator);
     }
 
+
     public List<WebElement> getSubCategories(int categoryNumber) {
 
-        List<WebElement> subCategories = Hooks.driver.findElements(subCategoryLocator);
-        int randomSubCategory = new Random().nextInt(3); // Select Random number from 0 to 2
+        categoryNumber = categoryNumber += 1;
         return Hooks.driver.findElements(subCategoryLocator);
     }
 
-    ///////End Hovers/////
+
+    //////////////////////////
+
+    By firstSliderLinkLocator = By.xpath("//div[@id='nivo-slider']//a[@href][1]");
+
+    By secondSliderIconLocator = By.xpath("//div[@class='nivo-controlNav']//a[contains(.,2)]");
+    By secondSliderLinkLocator = By.xpath("//div[@id='nivo-slider']//a[@href][2]");
+
+    public WebElement firstSliderLink() {
+        return Hooks.driver.findElement(firstSliderLinkLocator);
+    }
+
+    public WebElement changeToSecondSlider() {
+        return Hooks.driver.findElement(secondSliderIconLocator);
+    }
+
+    public WebElement secondSliderLink() {
+
+        return Hooks.driver.findElement(secondSliderLinkLocator);
+    }
+
+    // Follow Us
+    public WebElement fbLink() {
+        return Hooks.driver.findElement(By.xpath("//li[@class='facebook']//a"));
+    }
+
+    public WebElement twitterLink() {
+        return Hooks.driver.findElement(By.xpath("//li[@class='twitter']//a"));
+    }
+
+    public WebElement rssLink() {
+        return Hooks.driver.findElement(By.xpath("//li[@class='rss']//a"));
+    }
+
+    public WebElement youtubeLink() {
+        return Hooks.driver.findElement(By.xpath("//li[@class='youtube']//a"));
+    }
+
 
 }
 

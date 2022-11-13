@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import java.security.PublicKey;
 import java.util.List;
 import java.util.Random;
 
@@ -135,7 +134,6 @@ public class P03_homePage {
     //////////////////////////
 
     By firstSliderLinkLocator = By.xpath("//div[@id='nivo-slider']//a[@href][1]");
-
     By secondSliderIconLocator = By.xpath("//div[@class='nivo-controlNav']//a[contains(.,2)]");
     By secondSliderLinkLocator = By.xpath("//div[@id='nivo-slider']//a[@href][2]");
 
@@ -148,8 +146,12 @@ public class P03_homePage {
     }
 
     public WebElement secondSliderLink() {
-
         return Hooks.driver.findElement(secondSliderLinkLocator);
+    }
+
+    public List<WebElement> getCurrentSlider() {
+
+        return Hooks.driver.findElements(By.className("nivo-slider"));
     }
 
     // Follow Us
@@ -169,6 +171,47 @@ public class P03_homePage {
         return Hooks.driver.findElement(By.xpath("//li[@class='youtube']//a"));
     }
 
+    /// wishlist
+    By wishListButtonLocator = By.cssSelector("button[class=\"button-2 add-to-wishlist-button\"]");
+    By successMsgLocator = By.xpath("//div[@class='bar-notification success']");
+    By messageBarLocator = By.cssSelector("span[title=\"Close\"]");
+    By wishlistLinkLocator = By.cssSelector("span[class='wishlist-label']");
+    By wishlistQTY = By.className("qty-input");
+
+//    By HTCProduct_wishlistBtnLocator = By.xpath("//div[@class='product-item'][contains(.,'HTC')]//button[@class='button-2 add-to-wishlist-button']");
+//    public WebElement wishlistButtonHTC() {
+//        return Hooks.driver.findElement(HTCProduct_wishlistBtnLocator);
+//    }
+
+    public List<WebElement> getProductsWishlistButton() {
+        return Hooks.driver.findElements(wishListButtonLocator);
+    }
+
+    public String successMsg() {
+        String Message = Hooks.driver.findElement(successMsgLocator).getText();
+        return Message;
+    }
+
+    public Boolean successMsgDisplay() {
+        return Hooks.driver.findElement(successMsgLocator).isDisplayed();
+    }
+
+    public String getSuccessMsgColor() {
+        String MsgColor = Hooks.driver.findElement(successMsgLocator).getCssValue("background-color");
+        System.out.println(MsgColor);
+        return MsgColor;
+    }
+
+    public WebElement closeNotificationIcon() {
+        return Hooks.driver.findElement(messageBarLocator);
+    }
+
+    public WebElement wishListLink() {
+        return Hooks.driver.findElement(wishlistLinkLocator);
+    }
+
+    public String getWishlistProductsQTY() {
+        return Hooks.driver.findElement(wishlistQTY).getAttribute("value");
+    }
 
 }
-

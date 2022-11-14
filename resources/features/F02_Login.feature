@@ -5,7 +5,7 @@ Feature: F02_Login | users could use login functionality to use their accounts
 
   #Valid
   Scenario: user could login with valid email and password
-  When user login with "valid" email: "test@example.com" and password: "P@ssw0rd"
+  When user login with "valid" email: "test11@example.com" and password: "P@ssw0rd"
   And user clicks on login button
   Then user is logged to the system successfully
 

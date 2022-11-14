@@ -1,11 +1,10 @@
 package org.example.stepDefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.P03_homePage;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
 
 public class D05_hoverCategoriesStepDef {
 
@@ -21,9 +20,16 @@ public class D05_hoverCategoriesStepDef {
         home.clickRandomSubCategory();
     }
 
-    @Then("then the user will be redirected to the sub-category page")
+    @Then("sub-category page will open successfully")
     public void userNavigatedToSelectedSubCategoryPage() {
+        SoftAssert sAssert = new SoftAssert();
 
+        String actualTitle = home.getOpenedProductTitle();
+        String expectedTitle = Hooks.driver.getCurrentUrl().toLowerCase().trim();
+
+        sAssert.assertTrue(expectedTitle.contains(actualTitle), "Names are not matched");
+
+        sAssert.assertAll();
     }
 
 

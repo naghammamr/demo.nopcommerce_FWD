@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.List;
 import java.util.Random;
 
@@ -18,19 +17,9 @@ public class P03_homePage {
     By products = By.xpath("//span[@class='price actual-price']");
     By searchFieldLocator = By.id("small-searchterms");
     By searchBtnLocator = By.xpath("//button[@class='button-1 search-box-button']");
-
-    //Search Results Page
     By productNameLocator = By.xpath("//h2[@class='product-title']//a");
-    //end search results page/
-
-    //product detail Page
     By productSKULocator = By.xpath("//div[@class='sku']//span[@class='value']");
-    //end product detail page/
 
-    By mainCategoryLocator = By.cssSelector("ul[class='top-menu notmobile']>li>a");
-    //By subCategoryLocator = By.xpath("//ul[@class='sublist first-level']//li//a");
-
-    Actions hover = new Actions(Hooks.driver);
 
     public WebElement registerLink() {
         return Hooks.driver.findElement(registerLinkLocator);
@@ -81,7 +70,6 @@ public class P03_homePage {
             product_name[x] = productsNames.get(x).getText().toLowerCase();
             System.out.println(product_name);
         }
-
         return product_name;
     }
 
@@ -98,40 +86,7 @@ public class P03_homePage {
         return Hooks.driver.findElement(productSKULocator).getText();
     }
 
-    ///////Hovers/////////
-
-    public void hoverRandomCategory() {
-
-        List<WebElement> categories = Hooks.driver.findElements(mainCategoryLocator);
-
-        int randomCategory = new Random().nextInt(3); // Select Random number from 0 to 2
-        hover.moveToElement(categories.get(randomCategory)).perform();
-        System.out.println(randomCategory);
-    }
-
-    By subCategoryLocator = By.xpath("//ul//li//ul[@class='sublist first-level']//li//a");
-
-    public void clickRandomSubCategory() {
-        int randomSubCategory = new Random().nextInt(3); // Select Random number from 0 to 2
-
-        List<WebElement> subCategories = Hooks.driver.findElements(By.xpath("//ul//li[" + randomSubCategory + 1 + "]//ul[@class='sublist first-level']//li[" + randomSubCategory + 1 + "]//a"));
-        System.out.println(subCategories.get(randomSubCategory).getText());
-        subCategories.get(randomSubCategory).click();
-    }
-
-    public List<WebElement> getCategories() {
-        return Hooks.driver.findElements(mainCategoryLocator);
-    }
-
-
-    public List<WebElement> getSubCategories(int categoryNumber) {
-
-        categoryNumber = categoryNumber += 1;
-        return Hooks.driver.findElements(subCategoryLocator);
-    }
-
-
-    //////////////////////////
+    //////////Sliders////////////////
 
     By firstSliderLinkLocator = By.xpath("//div[@id='nivo-slider']//a[@href][1]");
     By secondSliderIconLocator = By.xpath("//div[@class='nivo-controlNav']//a[contains(.,2)]");
@@ -149,10 +104,10 @@ public class P03_homePage {
         return Hooks.driver.findElement(secondSliderLinkLocator);
     }
 
-    public List<WebElement> getCurrentSlider() {
-
-        return Hooks.driver.findElements(By.className("nivo-slider"));
-    }
+//    public List<WebElement> getCurrentSlider() {
+//
+//        return Hooks.driver.findElements(By.className("nivo-slider"));
+//    }
 
     // Follow Us
     public WebElement fbLink() {
@@ -178,18 +133,12 @@ public class P03_homePage {
     By wishlistLinkLocator = By.cssSelector("span[class='wishlist-label']");
     By wishlistQTY = By.className("qty-input");
 
-//    By HTCProduct_wishlistBtnLocator = By.xpath("//div[@class='product-item'][contains(.,'HTC')]//button[@class='button-2 add-to-wishlist-button']");
-//    public WebElement wishlistButtonHTC() {
-//        return Hooks.driver.findElement(HTCProduct_wishlistBtnLocator);
-//    }
-
     public List<WebElement> getProductsWishlistButton() {
         return Hooks.driver.findElements(wishListButtonLocator);
     }
 
     public String successMsg() {
-        String Message = Hooks.driver.findElement(successMsgLocator).getText();
-        return Message;
+        return Hooks.driver.findElement(successMsgLocator).getText();
     }
 
     public Boolean successMsgDisplay() {
@@ -213,5 +162,41 @@ public class P03_homePage {
     public String getWishlistProductsQTY() {
         return Hooks.driver.findElement(wishlistQTY).getAttribute("value");
     }
+
+
+    ///////Hovers/////////
+
+    public void hoverRandomCategory()
+    {
+        By mainCategoryLocator = By.cssSelector("ul[class='top-menu notmobile']>li>a");
+        List<WebElement> categories = Hooks.driver.findElements(mainCategoryLocator);
+
+        int randomNumber = new Random().nextInt(3); // Select Random number from 0 to 2
+
+        Actions hover = new Actions(Hooks.driver);
+        hover.moveToElement(categories.get(randomNumber)).perform();
+
+        String selectedCategoryTxt = categories.get(randomNumber).getText();
+        System.out.println("Selected Category: " + selectedCategoryTxt);
+        //Hooks.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public void clickRandomSubCategory() {
+        int randomSubCategory = new Random().nextInt(2); // Select Random number from 0 to 1
+        randomSubCategory += 1;
+        String locator = "(//ul[@class='top-menu notmobile']//ul)[" + randomSubCategory + "]//li//a";
+        List<WebElement> subCategories = Hooks.driver.findElements(By.xpath(locator));
+
+        String selectedSubCategoryText = subCategories.get(randomSubCategory).getText().toLowerCase().trim();
+        System.out.println("Selected Sub-Category: " + selectedSubCategoryText);
+
+        subCategories.get(randomSubCategory).click();
+    }
+
+    public String getOpenedProductTitle() {
+        By productPageTitleLocator = By.xpath("//div[@class='page-title']//h1");
+        return Hooks.driver.findElement(productPageTitleLocator).getText().toLowerCase().trim();
+    }
+
 
 }

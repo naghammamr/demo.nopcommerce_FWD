@@ -1,0 +1,4 @@
+file:resources/features/F06_homeSliders.feature:4:8
+file:resources/features/F07_FollowUs.feature:12
+file:resources/features/F05_hoverCategories.feature:3
+file:resources/features/F08_whichList.feature:9

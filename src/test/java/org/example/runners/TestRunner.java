@@ -16,4 +16,4 @@ import io.cucumber.testng.CucumberOptions;
                 },
         tags = "@smoke"
 )
-public class TestRunner { }
+public class TestRunner extends AbstractTestNGCucumberTests { }

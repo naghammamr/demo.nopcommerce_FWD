@@ -43,7 +43,7 @@ public class D08_WishlistStepDef {
     @And("user clicks on wishlist link")
     public void userCanClickOnWishlistLink()
     {
-        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(home.wishListLink()));
         home.wishListLink().click();
     }

@@ -32,7 +32,7 @@ public class D04_searchStepDef {
         {
             String actualURL = "https://demo.nopcommerce.com/search?q=";
             String expectedURL = Hooks.driver.getCurrentUrl();
-            sAssert.assertTrue(actualURL.contains(expectedURL),"Invalid URL");
+            sAssert.assertTrue(expectedURL.contains(actualURL),"Invalid URL");
 
             sAssert.assertTrue(productName.contains(arg0), "Invalid Search Results");
 

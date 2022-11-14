@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="19" time="244.564">
+<testcase classname="User could register a new account" name="guest user could register with valid data successfully" time="9.921">
+<system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type................................................passed
+And user enter first name "automation" and last name "tester"...............passed
+And user enter date of birth................................................passed
+And user enter email "test1@example.com" field and fills Password fields "P@ssw0rd" and "P@ssw0rd".passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="8.568">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with "valid" email: "test1@example.com" and password: "P@ssw0rd".passed
+And user clicks on login button.............................................passed
+Then user is logged to the system successfully..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with invalid email and password" time="8.122">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with "invalid" email: "wrong@example.com" and password: "P@ssw0rd".passed
+And user clicks on login button.............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03_Currencies | users could select Euro currency from the dropdown list on the home page" name="user could select Euro currency from home page" time="7.124">
+<system-out><![CDATA[Given user open the currency drop down at home page and select Euro option..passed
+Then Euro symbol is displayed on all products...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search using product name" time="7.289">
+<system-out><![CDATA[Given user specify search with "book" in the search field...................passed
+When user click on search button............................................passed
+Then user could find "book" in relative results.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search using product name 2" time="7.498">
+<system-out><![CDATA[Given user specify search with "laptop" in the search field.................passed
+When user click on search button............................................passed
+Then user could find "laptop" in relative results...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search using product name 3" time="8.389">
+<system-out><![CDATA[Given user specify search with "nike" in the search field...................passed
+When user click on search button............................................passed
+Then user could find "nike" in relative results.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search for product using sku" time="9.168">
+<system-out><![CDATA[Given user specify search with "SCI_FAITH" in the search field..............passed
+When user click on search button............................................passed
+Then user click on product name to view product detail once search results are displayed.passed
+And user could find "SCI_FAITH" in product detail page......................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search for product using sku 2" time="8.838">
+<system-out><![CDATA[Given user specify search with "APPLE_CAM" in the search field..............passed
+When user click on search button............................................passed
+Then user click on product name to view product detail once search results are displayed.passed
+And user could find "APPLE_CAM" in product detail page......................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user will be able to search for products with different parameters" name="user could search for product using sku 3" time="8.992">
+<system-out><![CDATA[Given user specify search with "SF_PRO_11" in the search field..............passed
+When user click on search button............................................passed
+Then user click on product name to view product detail once search results are displayed.passed
+And user could find "SF_PRO_11" in product detail page......................passed
+]]></system-out>
+</testcase>
+<testcase classname="F05_HoverCategories | Verify that user can select sub-category when hover on its main category" name="User can hover on one of main categories then click on sub category" time="59.723">
+<failure message="disconnected: unable to send message to renderer&#10;  (failed to check if window was closed: disconnected: unable to connect to renderer)&#10;  (Session info: chrome=107.0.5304.107)&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [b6842e77a5783168352284d1a431308d, clickElement {id=048ea09e-bef4-45ef-b8f9-9df731cfdbb6}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56266}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56266/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (b6842e77a5783168352284d1a431308d)] -&gt; xpath: //ul//li[01]//ul[@class='sublist first-level']//li[01]//a]&#10;Session ID: b6842e77a5783168352284d1a431308d" type="org.openqa.selenium.WebDriverException"><![CDATA[Given user hovers on a main-category........................................passed
+When the sub category list open and the user can click on any sub-category..failed
+Then then the user will be redirected to the sub-category page..............skipped
+
+StackTrace:
+org.openqa.selenium.WebDriverException: disconnected: unable to send message to renderer
+  (failed to check if window was closed: disconnected: unable to connect to renderer)
+  (Session info: chrome=107.0.5304.107)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b6842e77a5783168352284d1a431308d, clickElement {id=048ea09e-bef4-45ef-b8f9-9df731cfdbb6}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56266}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56266/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b6842e77a5783168352284d1a431308d)] -> xpath: //ul//li[01]//ul[@class='sublist first-level']//li[01]//a]
+Session ID: b6842e77a5783168352284d1a431308d
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at org.example.pages.P03_homePage.clickRandomSubCategory(P03_homePage.java:119)
+	at org.example.stepDefinitions.D05_hoverCategoriesStepDef.subCategoryListOpen(D05_hoverCategoriesStepDef.java:21)
+	at ✽.the sub category list open and the user can click on any sub-category(file:///D:/Study/FWD/demonopcommerce/resources/features/F05_hoverCategories.feature:5)
+]]></failure>
+</testcase>
+<testcase classname="F06_HomePageSliders" name="Verify that the first slider is clickable on home page" time="7.291">
+<failure message="Invalid Navigation! expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[Given the user clicks on the first slider on the home page..................passed
+Then user will be redirected to the nokia Lumia product page................failed
+
+StackTrace:
+java.lang.AssertionError: Invalid Navigation! expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.example.stepDefinitions.D06_homeSlidersStepDef.userRedirectedToNokiaPage(D06_homeSlidersStepDef.java:30)
+	at ✽.user will be redirected to the nokia Lumia product page(file:///D:/Study/FWD/demonopcommerce/resources/features/F06_homeSliders.feature:6)
+]]></failure>
+</testcase>
+<testcase classname="F06_HomePageSliders" name="Verify that the second slider is clickable on home page" time="6.791">
+<failure message="Invalid Navigation! expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[Given the user change to the second slider..................................passed
+When user clicks on the second slider on the home page......................passed
+Then user will be redirected to the iphone6 product page....................failed
+
+StackTrace:
+java.lang.AssertionError: Invalid Navigation! expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.example.stepDefinitions.D06_homeSlidersStepDef.userRedirectedToIphonePage(D06_homeSlidersStepDef.java:52)
+	at ✽.user will be redirected to the iphone6 product page(file:///D:/Study/FWD/demonopcommerce/resources/features/F06_homeSliders.feature:11)
+]]></failure>
+</testcase>
+<testcase classname="F07_FollowUs | users could open followUs links" name="Verify that the user opens facebook link" time="7.787">
+<system-out><![CDATA[Given user click on facebook link from the footer...........................passed
+Then "https://www.facebook.com/nopCommerce" is opened in new tab............passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_FollowUs | users could open followUs links" name="Verify that the user opens twitter link" time="8.112">
+<system-out><![CDATA[Given user click on twitter link from the footer............................passed
+Then "https://twitter.com/nopCommerce" is opened in new tab.................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_FollowUs | users could open followUs links" name="Verify that the user opens rss link" time="42.571">
+<failure message="Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56436}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56436/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 86663f5f608b9fb05519c1d820bbf75f" type="org.openqa.selenium.TimeoutException"><![CDATA[Given user click on rss link from the footer................................failed
+Then "https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab.skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56436}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56436/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 86663f5f608b9fb05519c1d820bbf75f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefinitions.D07_followUsStepDef.userClickOnRssLink(D07_followUsStepDef.java:39)
+	at ✽.user click on rss link from the footer(file:///D:/Study/FWD/demonopcommerce/resources/features/F07_FollowUs.feature:13)
+]]></failure>
+</testcase>
+<testcase classname="F07_FollowUs | users could open followUs links" name="Verify that the user opens youtube link" time="13.011">
+<system-out><![CDATA[Given user click on youtube link from the footer............................passed
+Then "https://www.youtube.com/user/nopCommerce" is opened in new tab........passed
+]]></system-out>
+</testcase>
+<testcase classname="F08 | users can add products to wishlist" name="Verify that the product is added to wishlist successfully" time="7.21">
+<system-out><![CDATA[Given user click on wishlist button on the HTC mobile product...............passed
+Then success message is displayed to the user...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F08 | users can add products to wishlist" name="Verify that wishlist quantity is correct" time="7.847">
+<failure message="element click intercepted: Element &lt;span class=&quot;wishlist-label&quot;&gt;...&lt;/span&gt; is not clickable at point (1156, 22). Other element would receive the click: &lt;p class=&quot;content&quot;&gt;...&lt;/p&gt;&#10;  (Session info: chrome=107.0.5304.107)&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [5eb3c765f1d85b8eee8bac5371c112ec, clickElement {id=4c403efa-5813-472f-985d-3f824819a4af}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56556}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56556/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (5eb3c765f1d85b8eee8bac5371c112ec)] -&gt; css selector: span[class='wishlist-label']]&#10;Session ID: 5eb3c765f1d85b8eee8bac5371c112ec" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given user click on wishlist button on the HTC mobile product...............passed
+When user close the success notification bar................................passed
+And user clicks on wishlist link............................................failed
+Then user can view products quantity added to the wishlist..................skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="wishlist-label">...</span> is not clickable at point (1156, 22). Other element would receive the click: <p class="content">...</p>
+  (Session info: chrome=107.0.5304.107)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'NAGHAM', ip: '192.168.1.15', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5eb3c765f1d85b8eee8bac5371c112ec, clickElement {id=4c403efa-5813-472f-985d-3f824819a4af}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\nagham\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56556}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56556/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (5eb3c765f1d85b8eee8bac5371c112ec)] -> css selector: span[class='wishlist-label']]
+Session ID: 5eb3c765f1d85b8eee8bac5371c112ec
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at org.example.stepDefinitions.D08_WishlistStepDef.userCanClickOnWishlistLink(D08_WishlistStepDef.java:48)
+	at ✽.user clicks on wishlist link(file:///D:/Study/FWD/demonopcommerce/resources/features/F08_whichList.feature:11)
+]]></failure>
+</testcase>
+</testsuite>
